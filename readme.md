@@ -1,5 +1,5 @@
 # NeurIPS 2019: Learn to Move - Walk Around 3rd place solution
-Code will be released soon
+Inference and training code will be released soon
 
 # Trajectory samples:
 ![](gifs/t1_small.gif)
@@ -7,4 +7,4 @@ Code will be released soon
 ![](gifs/t3_small.gif)
 
 # Walking in various directions
-![](gifs/t3_small.gif)
+![](gifs/various_dirs_small.gif)
