@@ -1,0 +1,13 @@
+attrs
+gym
+gym[Box2D]
+joblib
+numpy
+https://download.pytorch.org/whl/cu100/torch-1.1.0-cp36-cp36m-linux_x86_64.whl
+git+https://github.com/stanfordnmbl/osim-rl.git
+Pillow
+pytest
+tqdm
+tensorflow>=1.14
+tensorboard>=1.14
+tensorboardX
