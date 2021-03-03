@@ -1,0 +1,82 @@
+{
+  "environment": {
+    "env_num": 32,
+    "segment_len": 10,
+    "difficulty": 3,
+    "accuracy": 1e-4,
+    "frame_skip": 4,
+    "timestep_limit": 10000,
+    "weights": {
+      "reward_weights": [10, 1, 1],
+      "alive_death_task": [0, -50.0, 0]
+    }
+  },
+
+  "networks": {
+    "model_type": "skeleton_final",
+    "device_str": "cuda",
+    "actor_parameters": {
+      "hidden_dim": 1024,
+      "noisy": "False",
+      "layer_norm": "True",
+      "afn": "elu",
+      "residual": "True",
+      "dropout": 0.1,
+      "learning_rate": 3e-5,
+      "normal": "True"
+    },
+    "critic_parameters": {
+      "hidden_dim": 1024,
+      "noisy": "False",
+      "layer_norm": "True",
+      "afn": "relu",
+      "residual": "True",
+      "dropout": 0.1,
+      "q_value_dim": 6,
+      "learning_rate": 1e-4
+    }
+  },
+
+  "agent_parameters": {
+    "gamma": 0.99,
+    "soft_tau": 1e-2,
+    "n_step_loss": 5,
+    "rescaling": "True",
+    "n_step_train": 10,
+    "priority_weight": 0.9,
+    "q_weights": [2.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+    "use_observation_normalization": "False"
+  },
+
+  "replay_parameters": {
+    "log_dir": "logs/learning_to_move/8c_2/",
+    "replay_capacity": 250000,
+    "prioritization": "True",
+    "actor_size": 1,
+    "critic_size": 2
+  },
+
+  "trainer_parameters": {
+    "start_priority_exponent": 0.2,
+    "end_priority_exponent": 0.9,
+    "start_importance_exponent": 0.2,
+    "end_importance_exponent": 0.9,
+    "prioritization_steps": 3000,
+    "exp_replay_checkpoint": "None",
+    # "agent_checkpoint": "logs/learning_to_move/8c/epoch_0.pth",
+    # "load_full": "True"
+  },
+
+  "training_parameters": {
+    "min_experience_len": 100,
+    "num_epochs": 40,
+    "epoch_size": 500,
+    "batch_size": 256,
+    "train_steps": 16,
+    "test_n": 3,
+    "render": "False",
+    "segment_file": "None",
+    "pretrain_critic": "False",
+    "num_pretrain_epoch": 0
+  }
+}
